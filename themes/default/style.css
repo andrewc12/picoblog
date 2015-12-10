@@ -98,13 +98,13 @@ select:focus {
 /*---------------------------------------------*/
 body {
     font: 14px/1.8em 'Open Sans', Helvetica, Arial, Helvetica, sans-serif;
-    color: #444;
-    background: #fff;
+    color: #FFFFFF;
+    background: #272822;
     -webkit-font-smoothing: antialiased;
 }
 
 a, a:visited {
-    color: #2EAE9B;
+    color: #B38DFF;
     text-decoration: none;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
@@ -114,12 +114,12 @@ a, a:visited {
 }
 
 a:hover, a:active {
-    color: #000;
+    color: #FFFFFF;
     text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #000;
+    color: #A2FF01;
     line-height: 1.2em;
     margin-bottom: 0.6em;
 }
@@ -190,13 +190,13 @@ sup {
 
 code {
     font-family: Courier, "Courier New", Monaco, Tahoma;
-    background: #eee;
-    color: #333;
+    background: #272822;
+    color: #FFFFFF;
     padding: 0px 2px;
 }
 
 pre {
-    background: #eee;
+    background: #272822;
     padding: 20px;
     margin-bottom: 1em;
     overflow: auto;
@@ -217,10 +217,10 @@ blockquote {
 }
 
 #header {
-    background: #2EAE9B;
+    background: #272822;
     padding: 60px 0;
     margin-bottom: 80px;
-    color: #afe1da;
+    color: #FFFFFF;
 }
 #header a { color: #afe1da; }
 #header h1 a,
@@ -258,10 +258,10 @@ blockquote {
     float: left;
 }
 #footer {
-    background: #707070;
+    background: #272822;
     padding: 60px 0;
     margin-top: 80px;
-    color: #C0C0C0;
+    color: #FFFFFF;
 }
 #footer a { color: #ddd; }
 #footer a:hover { color: #fff; }
