@@ -23,7 +23,7 @@ I'm assuming that the computer you are running this on has the IP address 192.16
 sudo apt-get install isc-dhcp-server
 ```
 
-Configure the DHCP leases.
+Configure the DHCP server to provide IP addresses and PXE filename.
 ```
 #nano /etc/dhcp/dhcpd.conf
 cat > /etc/dhcp/dhcpd.conf << EOF
@@ -52,7 +52,7 @@ EOF
  
 Restart the server to load the new configuration
 ```
-/etc/init.d/isc-dhcp-server restart
+sudo /etc/init.d/isc-dhcp-server restart
 ```
  
 At this point in time a PXE client would try to download the specified files and fail.
@@ -61,7 +61,7 @@ At this point in time a PXE client would try to download the specified files and
 
 So now we install the trivial file transfer protocol server so our clients can actually download the files they're told to.
 ```
-apt-get install tftpd-hpa
+sudo apt-get install tftpd-hpa
 ``` 
 By default it shares files located in /srv/tftp/ .
 Next we'll just create the basic structure to store our files.
@@ -76,7 +76,7 @@ We will only be using the generic file "default".
 For detailed information check out http://www.syslinux.org/wiki/index.php/PXELINUX#How_do_I_Configure_PXELINUX.3F
 Next we will install pxelinux which is a boot loader made to grab configuration off the network. 
 ```
-apt-get install syslinux
+sudo apt-get install syslinux
 ```
 Now copy the syslinux files to the TFTP servers directory
 ```
