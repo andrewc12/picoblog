@@ -8,9 +8,9 @@ Template: blog-post
 ##Network booting
 
 I recently learned how useful this is. It's another way of getting data on devices that is more flexible than physical storage. It consists of three parts
-DHCP server
-File server
-Executable file
+* DHCP server
+* File server
+* Executable file
 
 On x86 based computers, the PXE client will request an IP address from the DHCP server.
 The DHCP server will return an IP address and if configured the name of a file and the IP address of the TFTP server to download it from.
@@ -54,7 +54,6 @@ Restart the server to load the new configuration
 ```
  
 At this point in time a PXE client would try to download the specified files and fail.
-#My next post will explain how to set up a tftp server and start getting into payloads
 
 So now we install the trivial file transfer protocol server so our clients can actually download the files they're told to.
 ```
