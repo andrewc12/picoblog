@@ -16,7 +16,9 @@ On x86 based computers, the PXE client will request an IP address from the DHCP 
 The DHCP server will return an IP address and if configured the name of a file and the IP address of the TFTP server to download it from.
 The PXE client will then download and execute the file.
 
-This post assumes that the pc you are running this on has the IP address 192.168.0.1 please make adjustments as necessary. We need to set up a DHCP server to provide instructions to the PXE client. On debian I will be installing the Internet Systems Consortiums dhcp server. 
+###DHCP server
+
+I'm assuming that the computer you are running this on has the IP address 192.168.0.1 please make adjustments as necessary. We need to set up a DHCP server to provide instructions to the PXE client. On debian I will be installing the Internet Systems Consortiums dhcp server. 
 ```
 sudo apt-get install isc-dhcp-server
 ```
@@ -55,20 +57,19 @@ Restart the server to load the new configuration
  
 At this point in time a PXE client would try to download the specified files and fail.
 
+###TFTP server
+
 So now we install the trivial file transfer protocol server so our clients can actually download the files they're told to.
 ```
 apt-get install tftpd-hpa
-```
-
- 
-By default it shares files located in /srv/tftp/ Next we'll just create the basic structure to store our files.
+``` 
+By default it shares files located in /srv/tftp/ .
+Next we'll just create the basic structure to store our files.
 ```
 mkdir /srv/tftp/
 mkdir /srv/tftp/images
 mkdir /srv/tftp/pxelinux.cfg
 ```
-
- 
 The images directory will end up containing the various things you want to run.
 The pxelinux.cfg directory is where pxelinux will automatically look for a configuration files.
 We will only be using the generic file "default".
@@ -87,6 +88,4 @@ cp /usr/lib/syslinux/reboot.c32 /srv/tftp/
 cp /usr/lib/syslinux/chain.c32 /srv/tftp/
 cp /usr/lib/syslinux/memdisk /srv/tftp/
 ```
-
- 
 After this a PXE client would be able to download and run pxelinux.0 from the server. However with no configuration files it won't do anything.
