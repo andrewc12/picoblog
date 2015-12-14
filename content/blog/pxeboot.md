@@ -7,7 +7,7 @@ Template: blog-post
 
 ##Network booting
 
-I recently learned how useful this is. It's another way of getting data on devices that is more flexible than physical storage. It consists of three parts
+I recently learned how useful this is. It's another way of getting data onto devices that is more flexible than physical storage. It consists of three parts
 * DHCP server
 * File server
 * Executable file
@@ -74,6 +74,7 @@ The images directory will end up containing the various things you want to run.
 The pxelinux.cfg directory is where pxelinux will automatically look for a configuration files.
 We will only be using the generic file "default".
 For detailed information check out http://www.syslinux.org/wiki/index.php/PXELINUX#How_do_I_Configure_PXELINUX.3F
+
 Next we will install pxelinux which is a boot loader made to grab configuration off the network. 
 ```
 sudo apt-get install syslinux
