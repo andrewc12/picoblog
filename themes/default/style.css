@@ -234,7 +234,7 @@ blockquote {
     display: none;
     width: 35px;
     height: 35px;
-    background: #afe1da url(menu-icon.png) center;
+    background: #272822 url(menu-icon.png) center;
 }
 #header nav {
     float: right;
